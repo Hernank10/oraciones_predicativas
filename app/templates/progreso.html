@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Mi Progreso - Gramática Española{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h1>Mi Progreso</h1>
+        <p class="lead">Sigue tu avance en el aprendizaje de las oraciones predicativas.</p>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Resumen</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6 text-center">
+                        <h3>{{ total_ejercicios }}</h3>
+                        <p class="text-muted">Ejercicios completados</p>
+                    </div>
+                    <div class="col-6 text-center">
+                        <h3>{{ puntuacion_total }}</h3>
+                        <p class="text-muted">Puntos totales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Nivel de dominio por categoría</h5>
+            </div>
+            <div class="card-body">
+                {% for progreso in progresos %}
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span>{{ progreso.categoria.nombre }}</span>
+                        <span>{{ (progreso.nivel_dominio)|round|int }}%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" 
+                             style="width: {{ progreso.nivel_dominio }}%;" 
+                             aria-valuenow="{{ progreso.nivel_dominio }}" 
+                             aria-valuemin="0" 
+                             aria-valuemax="100"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Resultados recientes</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Puntuación</th>
+                                <th>Total preguntas</th>
+                                <th>Tiempo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for resultado in resultados_recientes %}
+                            <tr>
+                                <td>{{ resultado.fecha.strftime('%d/%m/%Y %H:%M') }}</td>
+                                <td>{{ resultado.puntuacion }} / {{ resultado.total_preguntas * 10 }}</td>
+                                <td>{{ resultado.total_preguntas }}</td>
+                                <td>{{ (resultado.tiempo_empleado // 60) }}:{{ '%02d' % (resultado.tiempo_empleado % 60) }}</td>
+                                <td>
+                                    <a href="{{ url_for('ver_resultados', resultado_id=resultado.id) }}" 
+                                       class="btn btn-sm btn-outline-primary">
+                                        Ver detalles
+                                    </a>
+                                </td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="5" class="text-center">No hay resultados disponibles</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

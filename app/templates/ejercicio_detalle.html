@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Ejercicio - Gramática Española{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url_for('ejercicios') }}">Ejercicios</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Ejercicio</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">{{ ejercicio.categoria.nombre }}</h5>
+                    <span class="badge bg-info">
+                        Dificultad: {% for i in range(ejercicio.dificultad) %}★{% endfor %}
+                    </span>
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="mb-4">{{ ejercicio.pregunta }}</h5>
+                
+                <div id="ejercicio-container">
+                    {% if ejercicio.tipo == 'opcion_multiple' %}
+                        {% for opcion in ejercicio.opciones %}
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="respuesta" id="opcion{{ loop.index0 }}" value="{{ loop.index0 }}">
+                            <label class="form-check-label" for="opcion{{ loop.index0 }}">
+                                {{ opcion }}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    {% elif ejercicio.tipo == 'completar' %}
+                        <input type="text" class="form-control" id="respuesta" placeholder="Escribe tu respuesta">
+                    {% elif ejercicio.tipo == 'identificar' %}
+                        <select class="form-select" id="respuesta">
+                            <option value="">Selecciona una opción</option>
+                            <option value="0">Transitiva</option>
+                            <option value="1">Intransitiva</option>
+                            <option value="2">Reflexiva</option>
+                            <option value="3">Recíproca</option>
+                        </select>
+                    {% endif %}
+                </div>
+                
+                <div id="resultado" class="mt-4" style="display: none;">
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="resultado-contenido"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="btn-verificar" class="btn btn-primary mt-3" onclick="verificarRespuesta()">
+                    Verificar respuesta
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function verificarRespuesta() {
+    let respuesta;
+    
+    {% if ejercicio.tipo == 'opcion_multiple' %}
+        respuesta = $('input[name="respuesta"]:checked').val();
+    {% elif ejercicio.tipo == 'completar' %}
+        respuesta = $('#respuesta').val();
+    {% elif ejercicio.tipo == 'identificar' %}
+        respuesta = $('#respuesta').val();
+    {% endif %}
+    
+    if (respuesta === undefined || respuesta === '') {
+        alert('Por favor, selecciona una respuesta.');
+        return;
+    }
+    
+    $('#btn-verificar').prop('disabled', true);
+    
+    $.ajax({
+        url: '{{ url_for("verificar_ejercicio") }}',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            ejercicio_id: {{ ejercicio.id }},
+            respuesta: respuesta
+        }),
+        success: function(data) {
+            let html = '';
+            if (data.correcta) {
+                html += '<div class="alert alert-success">✓ ¡Respuesta correcta!</div>';
+            } else {
+                html += '<div class="alert alert-danger">✗ Respuesta incorrecta</div>';
+            }
+            
+            html += '<p><strong>Explicación:</strong> ' + data.explicacion + '</p>';
+            
+            if (data.puntos_obtenidos > 0) {
+                html += '<p class="text-success">¡Has ganado ' + data.puntos_obtenidos + ' puntos!</p>';
+            }
+            
+            $('#resultado-contenido').html(html);
+            $('#resultado').show();
+        },
+        error: function() {
+            alert('Error al verificar la respuesta. Por favor, intenta de nuevo.');
+        },
+        complete: function() {
+            $('#btn-verificar').prop('disabled', false);
+        }
+    });
+}
+</script>
+{% endblock %}x

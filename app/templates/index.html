@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - Gramática Española{% endblock %}
+
+{% block content %}
+<div class="row mb-5">
+    <div class="col-lg-8 mx-auto text-center">
+        <h1 class="display-4 fw-bold">Oraciones Predicativas</h1>
+        <p class="lead">Aprende a identificar y clasificar las oraciones según la naturaleza del predicado en español</p>
+        <a href="{{ url_for('teoria') }}" class="btn btn-primary btn-lg">
+            <i class="bi bi-book"></i> Comenzar a aprender
+        </a>
+    </div>
+</div>
+
+<!-- Estadísticas rápidas -->
+<div class="row mb-5">
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="bi bi-journal-text display-4 text-primary"></i>
+                <h3>{{ total_ejemplos }}</h3>
+                <p class="text-muted">Ejemplos disponibles</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="bi bi-people display-4 text-success"></i>
+                <h3>{{ total_usuarios }}</h3>
+                <p class="text-muted">Estudiantes activos</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="bi bi-trophy display-4 text-warning"></i>
+                <h3>100+</h3>
+                <p class="text-muted">Ejercicios interactivos</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Categorías -->
+<h2 class="text-center mb-4">Explora por categorías</h2>
+<div class="row">
+    {% for categoria in categorias %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="bi {{ categoria.icono }} display-4 text-primary"></i>
+                <h5 class="card-title">{{ categoria.nombre }}</h5>
+                <p class="card-text">{{ categoria.descripcion }}</p>
+                <a href="{{ url_for('teoria_categoria', categoria_id=categoria.id) }}" class="btn btn-outline-primary btn-sm">
+                    Ver teoría <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Ejemplos aleatorios -->
+<div class="row mt-5">
+    <div class="col-12">
+        <h2 class="text-center mb-4">Ejemplos aleatorios</h2>
+        <div class="card">
+            <div class="card-body" id="random-examples">
+                <div class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Cargando...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(document).ready(function() {
+    // Cargar ejemplos aleatorios
+    $.ajax({
+        url: '/api/ejemplos/random',
+        method: 'GET',
+        data: { count: 3 },
+        success: function(data) {
+            let html = '';
+            data.forEach(function(ejemplo) {
+                html += `
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">${ejemplo.categoria}</h6>
+                            <p class="card-text">"${ejemplo.texto}"</p>
+                            <a href="/ejemplo/${ejemplo.id}" class="btn btn-sm btn-outline-primary">
+                                Ver análisis <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+            $('#random-examples').html(html);
+        },
+        error: function() {
+            $('#random-examples').html('<p class="text-danger">Error al cargar ejemplos</p>');
+        }
+    });
+});
+</script>
+{% endblock %}

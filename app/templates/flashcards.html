@@ -1,0 +1,846 @@
+{% extends "base.html" %}
+
+{% block title %}Flashcards - 100 Ejercicios Interactivos{% endblock %}
+
+{% block extra_css %}
+<style>
+    .flashcard-container {
+        perspective: 1000px;
+        margin: 2rem auto;
+        max-width: 600px;
+    }
+    
+    .flashcard {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+    }
+    
+    .flashcard.flipped {
+        transform: rotateY(180deg);
+    }
+    
+    .flashcard-front, .flashcard-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .flashcard-front {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+    
+    .flashcard-back {
+        background: white;
+        color: #333;
+        transform: rotateY(180deg);
+    }
+    
+    .flashcard-back.correct {
+        border: 4px solid #28a745;
+    }
+    
+    .flashcard-back.incorrect {
+        border: 4px solid #dc3545;
+    }
+    
+    .option-btn {
+        width: 100%;
+        text-align: left;
+        margin: 0.5rem 0;
+        padding: 1rem;
+        border: 2px solid #dee2e6;
+        border-radius: 10px;
+        background: white;
+        transition: all 0.3s;
+    }
+    
+    .option-btn:hover {
+        background: #f8f9fa;
+        border-color: #667eea;
+    }
+    
+    .option-btn.selected {
+        background: #667eea;
+        color: white;
+        border-color: #667eea;
+    }
+    
+    .option-btn.correct-answer {
+        background: #28a745;
+        color: white;
+        border-color: #28a745;
+    }
+    
+    .progress-indicator {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+    
+    .progress-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #dee2e6;
+        transition: all 0.3s;
+    }
+    
+    .progress-dot.completed {
+        background: #28a745;
+    }
+    
+    .progress-dot.current {
+        background: #667eea;
+        transform: scale(1.2);
+    }
+    
+    .progress-dot.incorrect {
+        background: #dc3545;
+    }
+    
+    .feedback-message {
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+        animation: slideIn 0.5s;
+    }
+    
+    .feedback-message.correct {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+    
+    .feedback-message.incorrect {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+    
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .stats-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .pista-btn {
+        background: rgba(255,255,255,0.2);
+        border: 1px solid rgba(255,255,255,0.3);
+        color: white;
+        border-radius: 20px;
+        padding: 0.25rem 1rem;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    
+    .pista-btn:hover {
+        background: rgba(255,255,255,0.3);
+    }
+    
+    .pista-text {
+        background: #f8f9fa;
+        border-left: 4px solid #667eea;
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+        animation: fadeIn 0.5s;
+    }
+    
+    .timer {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #667eea;
+    }
+    
+    .achievement-unlock {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        z-index: 1000;
+        text-align: center;
+        animation: popIn 0.5s;
+    }
+    
+    @keyframes popIn {
+        from {
+            transform: translate(-50%, -50%) scale(0);
+        }
+        to {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+    
+    .confetti {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 999;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="text-center">🎴 Flashcards Interactivas</h1>
+        <p class="lead text-center">100 ejercicios para dominar las oraciones predicativas</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <!-- Panel de estadísticas -->
+        <div class="stats-card">
+            <h5 class="mb-3">Tu Progreso</h5>
+            <div class="mb-3">
+                <div class="d-flex justify-content-between mb-1">
+                    <span>Ejercicios completados</span>
+                    <span id="completados">0/100</span>
+                </div>
+                <div class="progress" style="height: 10px;">
+                    <div id="progress-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-6">
+                    <h3 id="aciertos">0</h3>
+                    <small>Aciertos</small>
+                </div>
+                <div class="col-6">
+                    <h3 id="fallos">0</h3>
+                    <small>Fallos</small>
+                </div>
+            </div>
+            <div class="mt-3">
+                <div class="d-flex justify-content-between">
+                    <span>Racha actual</span>
+                    <span id="racha">0 🔥</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Filtros -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5 class="mb-0">Filtros</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">Categoría</label>
+                    <select class="form-select" id="filtro-categoria">
+                        <option value="todas">Todas</option>
+                        <option value="Transitivas">Transitivas</option>
+                        <option value="Intransitivas">Intransitivas</option>
+                        <option value="Reflexivas">Reflexivas</option>
+                        <option value="Recíprocas">Recíprocas</option>
+                        <option value="Complemento Directo">Complemento Directo</option>
+                        <option value="Complemento Indirecto">Complemento Indirecto</option>
+                        <option value="Complementos Circunstanciales">Complementos Circunstanciales</option>
+                        <option value="Uso de preposiciones">Uso de preposiciones</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Dificultad</label>
+                    <select class="form-select" id="filtro-dificultad">
+                        <option value="0">Todas</option>
+                        <option value="1">★ Fácil</option>
+                        <option value="2">★★ Media</option>
+                        <option value="3">★★★ Difícil</option>
+                        <option value="4">★★★★ Experto</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Tipo</label>
+                    <select class="form-select" id="filtro-tipo">
+                        <option value="todos">Todos</option>
+                        <option value="identificar">Identificar</option>
+                        <option value="completar">Completar</option>
+                        <option value="gramatical">Gramatical</option>
+                        <option value="analisis">Análisis</option>
+                        <option value="transformar">Transformar</option>
+                        <option value="error">Corrección</option>
+                        <option value="clasificar">Clasificar</option>
+                        <option value="teoria">Teoría</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary w-100" onclick="aplicarFiltros()">
+                    <i class="bi bi-funnel"></i> Aplicar filtros
+                </button>
+            </div>
+        </div>
+        
+        <!-- Logros -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">🏆 Logros</h5>
+            </div>
+            <div class="card-body">
+                <div id="logros-container">
+                    <!-- Se llenará con JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-9">
+        <!-- Selector de modo -->
+        <div class="btn-group mb-3 w-100">
+            <button class="btn btn-outline-primary active" onclick="cambiarModo('flashcards')" id="btn-modo-flashcards">
+                <i class="bi bi-card-list"></i> Modo Flashcards
+            </button>
+            <button class="btn btn-outline-primary" onclick="cambiarModo('practica')" id="btn-modo-practica">
+                <i class="bi bi-pencil-square"></i> Modo Práctica
+            </button>
+            <button class="btn btn-outline-primary" onclick="cambiarModo('examen')" id="btn-modo-examen">
+                <i class="bi bi-clock-history"></i> Modo Examen
+            </button>
+        </div>
+        
+        <!-- Timer para modo examen -->
+        <div id="timer-container" class="text-center mb-3" style="display: none;">
+            <div class="timer" id="timer">15:00</div>
+        </div>
+        
+        <!-- Indicador de progreso -->
+        <div class="progress-indicator" id="progress-indicator"></div>
+        
+        <!-- Flashcard -->
+        <div class="flashcard-container">
+            <div class="flashcard" id="flashcard" onclick="voltearFlashcard()">
+                <div class="flashcard-front">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <span class="badge bg-light text-dark" id="categoria-badge"></span>
+                        <span class="badge bg-warning" id="dificultad-badge"></span>
+                    </div>
+                    <h4 id="pregunta-texto" class="text-center"></h4>
+                    <div class="mt-4 text-center">
+                        <small class="opacity-75">👆 Haz clic para voltear</small>
+                    </div>
+                </div>
+                <div class="flashcard-back" id="flashcard-back">
+                    <!-- Las opciones se cargarán aquí -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Controles -->
+        <div class="d-flex justify-content-between mt-3">
+            <button class="btn btn-outline-secondary" onclick="ejercicioAnterior()" id="btn-anterior">
+                <i class="bi bi-arrow-left"></i> Anterior
+            </button>
+            <div>
+                <span id="ejercicio-actual">1</span>/<span id="total-ejercicios">100</span>
+            </div>
+            <button class="btn btn-outline-secondary" onclick="ejercicioSiguiente()" id="btn-siguiente">
+                Siguiente <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
+        
+        <!-- Botones de acción -->
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <button class="btn btn-outline-info w-100" onclick="mostrarPista()">
+                    <i class="bi bi-lightbulb"></i> Pista
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-outline-success w-100" onclick="marcarFacil()">
+                    <i class="bi bi-star"></i> Fácil
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-outline-danger w-100" onclick="reportarError()">
+                    <i class="bi bi-flag"></i> Reportar
+                </button>
+            </div>
+        </div>
+        
+        <!-- Área de feedback -->
+        <div id="feedback-area" class="mt-4"></div>
+        
+        <!-- Pista (inicialmente oculta) -->
+        <div id="pista-area" class="mt-3" style="display: none;"></div>
+        
+        <!-- Estadísticas detalladas -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5 class="mb-0">📊 Estadísticas por categoría</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="statsChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de logro desbloqueado -->
+<div class="achievement-unlock" id="achievement-modal" style="display: none;">
+    <i class="bi bi-trophy-fill display-1 text-warning"></i>
+    <h3 class="mt-3" id="logro-titulo">¡Logro desbloqueado!</h3>
+    <p id="logro-descripcion"></p>
+    <button class="btn btn-primary mt-3" onclick="cerrarModal()">¡Genial!</button>
+</div>
+
+<!-- Canvas para confeti -->
+<canvas id="confetti-canvas" class="confetti" style="display: none;"></canvas>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// Variables globales
+let ejercicios = [];
+let ejerciciosFiltrados = [];
+let indiceActual = 0;
+let respuestasUsuario = {};
+let progresoUsuario = JSON.parse(localStorage.getItem('progresoFlashcards')) || {
+    completados: [],
+    aciertos: 0,
+    fallos: 0,
+    racha: 0,
+    maxRacha: 0,
+    porCategoria: {},
+    tiempoTotal: 0,
+    logros: []
+};
+let modoActual = 'flashcards';
+let temporizador;
+let tiempoRestante = 900; // 15 minutos en segundos
+let examenEnProgreso = false;
+
+// Logros disponibles
+const logros = [
+    { id: 'principiante', nombre: 'Principiante', descripcion: 'Completa 10 ejercicios', icono: '🌱', condicion: (p) => p.completados.length >= 10 },
+    { id: 'intermedio', nombre: 'Estudiante', descripcion: 'Completa 25 ejercicios', icono: '📚', condicion: (p) => p.completados.length >= 25 },
+    { id: 'avanzado', nombre: 'Avanzado', descripcion: 'Completa 50 ejercicios', icono: '🎓', condicion: (p) => p.completados.length >= 50 },
+    { id: 'experto', nombre: 'Experto', descripcion: 'Completa 100 ejercicios', icono: '🏆', condicion: (p) => p.completados.length >= 100 },
+    { id: 'racha5', nombre: 'En racha', descripcion: '5 respuestas correctas seguidas', icono: '🔥', condicion: (p) => p.maxRacha >= 5 },
+    { id: 'racha10', nombre: 'Imparable', descripcion: '10 respuestas correctas seguidas', icono: '⚡', condicion: (p) => p.maxRacha >= 10 },
+    { id: 'perfecto', nombre: 'Perfecto', descripcion: '100% de aciertos en una categoría', icono: '💯', condicion: (p) => {
+        return Object.values(p.porCategoria).some(c => c.total > 0 && c.aciertos === c.total);
+    }},
+    { id: 'veloz', nombre: 'Veloz', descripcion: 'Completa un ejercicio en menos de 10 segundos', icono: '⚡', condicion: () => false }, // Se verifica en tiempo real
+    { id: 'madrugador', nombre: 'Madrugador', descripcion: 'Practica antes de las 8 AM', icono: '🌅', condicion: () => new Date().getHours() < 8 }
+];
+
+// Cargar ejercicios
+fetch('/static/data/ejercicios_flashcards.json')
+    .then(response => response.json())
+    .then(data => {
+        ejercicios = data.ejercicios;
+        ejerciciosFiltrados = [...ejercicios];
+        actualizarInterfaz();
+        inicializarEstadisticas();
+        verificarLogros();
+    });
+
+function actualizarInterfaz() {
+    if (ejerciciosFiltrados.length === 0) {
+        document.getElementById('flashcard-front').innerHTML = '<h4 class="text-center">No hay ejercicios con estos filtros</h4>';
+        return;
+    }
+    
+    const ejercicio = ejerciciosFiltrados[indiceActual];
+    document.getElementById('pregunta-texto').textContent = ejercicio.pregunta;
+    document.getElementById('categoria-badge').textContent = ejercicio.categoria;
+    document.getElementById('dificultad-badge').innerHTML = '★'.repeat(ejercicio.dificultad);
+    document.getElementById('ejercicio-actual').textContent = indiceActual + 1;
+    document.getElementById('total-ejercicios').textContent = ejerciciosFiltrados.length;
+    
+    // Generar opciones
+    let opcionesHtml = '<div class="mb-3">';
+    ejercicio.opciones.forEach((opcion, idx) => {
+        opcionesHtml += `
+            <button class="option-btn" onclick="seleccionarOpcion(${idx})" id="opcion-${idx}">
+                ${String.fromCharCode(65 + idx)}. ${opcion}
+            </button>
+        `;
+    });
+    opcionesHtml += '</div>';
+    
+    // Añadir explicación si ya se respondió
+    if (respuestasUsuario[ejercicio.id]) {
+        const respuesta = respuestasUsuario[ejercicio.id];
+        opcionesHtml += `
+            <div class="feedback-message ${respuesta.correcta ? 'correct' : 'incorrect'}">
+                ${respuesta.correcta ? '✓ ¡Correcto!' : '✗ Incorrecto'}
+                <br>
+                <small>${ejercicio.explicacion}</small>
+            </div>
+        `;
+    }
+    
+    document.getElementById('flashcard-back').innerHTML = opcionesHtml;
+    
+    // Actualizar indicadores de progreso
+    actualizarProgresoIndicador();
+    actualizarEstadisticas();
+}
+
+function actualizarProgresoIndicador() {
+    const container = document.getElementById('progress-indicator');
+    let html = '';
+    
+    ejerciciosFiltrados.forEach((ej, idx) => {
+        let clase = 'progress-dot';
+        if (respuestasUsuario[ej.id]) {
+            clase += respuestasUsuario[ej.id].correcta ? ' completed' : ' incorrect';
+        }
+        if (idx === indiceActual) {
+            clase += ' current';
+        }
+        html += `<div class="${clase}" onclick="irAEjercicio(${idx})"></div>`;
+    });
+    
+    container.innerHTML = html;
+}
+
+function seleccionarOpcion(opcionIdx) {
+    const ejercicio = ejerciciosFiltrados[indiceActual];
+    const esCorrecta = (opcionIdx === ejercicio.respuesta_correcta);
+    
+    // Guardar respuesta
+    respuestasUsuario[ejercicio.id] = {
+        respuesta: opcionIdx,
+        correcta: esCorrecta,
+        timestamp: new Date().toISOString()
+    };
+    
+    // Actualizar progreso
+    if (!progresoUsuario.completados.includes(ejercicio.id)) {
+        progresoUsuario.completados.push(ejercicio.id);
+        if (esCorrecta) {
+            progresoUsuario.aciertos++;
+            progresoUsuario.racha++;
+            if (progresoUsuario.racha > progresoUsuario.maxRacha) {
+                progresoUsuario.maxRacha = progresoUsuario.racha;
+            }
+        } else {
+            progresoUsuario.fallos++;
+            progresoUsuario.racha = 0;
+        }
+        
+        // Actualizar por categoría
+        if (!progresoUsuario.porCategoria[ejercicio.categoria]) {
+            progresoUsuario.porCategoria[ejercicio.categoria] = { total: 0, aciertos: 0 };
+        }
+        progresoUsuario.porCategoria[ejercicio.categoria].total++;
+        if (esCorrecta) {
+            progresoUsuario.porCategoria[ejercicio.categoria].aciertos++;
+        }
+    }
+    
+    // Guardar en localStorage
+    localStorage.setItem('progresoFlashcards', JSON.stringify(progresoUsuario));
+    
+    // Mostrar feedback
+    mostrarFeedback(ejercicio, esCorrecta);
+    
+    // Verificar logros
+    verificarLogros();
+    
+    // Actualizar interfaz
+    actualizarInterfaz();
+    
+    // En modo examen, avanzar automáticamente
+    if (modoActual === 'examen' && indiceActual < ejerciciosFiltrados.length - 1) {
+        setTimeout(() => ejercicioSiguiente(), 1500);
+    }
+}
+
+function mostrarFeedback(ejercicio, esCorrecta) {
+    const feedbackArea = document.getElementById('feedback-area');
+    feedbackArea.innerHTML = `
+        <div class="feedback-message ${esCorrecta ? 'correct' : 'incorrect'}">
+            <h5>${esCorrecta ? '✓ ¡Correcto!' : '✗ Incorrecto'}</h5>
+            <p>${ejercicio.explicacion}</p>
+        </div>
+    `;
+    
+    // Efectos visuales
+    if (esCorrecta) {
+        document.getElementById('flashcard-back').classList.add('correct');
+        setTimeout(() => {
+            document.getElementById('flashcard-back').classList.remove('correct');
+        }, 500);
+    } else {
+        document.getElementById('flashcard-back').classList.add('incorrect');
+        setTimeout(() => {
+            document.getElementById('flashcard-back').classList.remove('incorrect');
+        }, 500);
+    }
+}
+
+function actualizarEstadisticas() {
+    document.getElementById('completados').textContent = 
+        `${progresoUsuario.completados.length}/100`;
+    document.getElementById('aciertos').textContent = progresoUsuario.aciertos;
+    document.getElementById('fallos').textContent = progresoUsuario.fallos;
+    document.getElementById('racha').textContent = `${progresoUsuario.racha} 🔥`;
+    
+    const porcentaje = (progresoUsuario.completados.length / 100) * 100;
+    document.getElementById('progress-bar').style.width = `${porcentaje}%`;
+}
+
+function verificarLogros() {
+    const nuevosLogros = [];
+    
+    logros.forEach(logro => {
+        if (!progresoUsuario.logros.includes(logro.id) && logro.condicion(progresoUsuario)) {
+            nuevosLogros.push(logro);
+            progresoUsuario.logros.push(logro.id);
+        }
+    });
+    
+    if (nuevosLogros.length > 0) {
+        mostrarLogros(nuevosLogros);
+    }
+    
+    // Actualizar display de logros
+    const container = document.getElementById('logros-container');
+    let html = '';
+    logros.forEach(logro => {
+        const desbloqueado = progresoUsuario.logros.includes(logro.id);
+        html += `
+            <div class="mb-2 p-2 border rounded ${desbloqueado ? 'bg-success text-white' : 'bg-light'}">
+                <span class="me-2">${logro.icono}</span>
+                <strong>${logro.nombre}</strong>
+                ${desbloqueado ? '<i class="bi bi-check-circle-fill float-end"></i>' : ''}
+                <br><small>${logro.descripcion}</small>
+            </div>
+        `;
+    });
+    container.innerHTML = html;
+}
+
+function mostrarLogros(logrosNuevos) {
+    const modal = document.getElementById('achievement-modal');
+    document.getElementById('logro-titulo').textContent = logrosNuevos[0].nombre;
+    document.getElementById('logro-descripcion').textContent = logrosNuevos[0].descripcion;
+    modal.style.display = 'block';
+    
+    // Lanzar confeti
+    lanzarConfeti();
+    
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 3000);
+}
+
+function lanzarConfeti() {
+    const canvas = document.getElementById('confetti-canvas');
+    canvas.style.display = 'block';
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    // Aquí iría la lógica de confeti (podemos importar una librería)
+    // Por simplicidad, solo mostramos un alert simulado
+    
+    setTimeout(() => {
+        canvas.style.display = 'none';
+    }, 3000);
+}
+
+function voltearFlashcard() {
+    document.getElementById('flashcard').classList.toggle('flipped');
+}
+
+function ejercicioAnterior() {
+    if (indiceActual > 0) {
+        indiceActual--;
+        document.getElementById('flashcard').classList.remove('flipped');
+        actualizarInterfaz();
+    }
+}
+
+function ejercicioSiguiente() {
+    if (indiceActual < ejerciciosFiltrados.length - 1) {
+        indiceActual++;
+        document.getElementById('flashcard').classList.remove('flipped');
+        actualizarInterfaz();
+    }
+}
+
+function irAEjercicio(indice) {
+    indiceActual = indice;
+    document.getElementById('flashcard').classList.remove('flipped');
+    actualizarInterfaz();
+}
+
+function aplicarFiltros() {
+    const categoria = document.getElementById('filtro-categoria').value;
+    const dificultad = parseInt(document.getElementById('filtro-dificultad').value);
+    const tipo = document.getElementById('filtro-tipo').value;
+    
+    ejerciciosFiltrados = ejercicios.filter(ej => {
+        if (categoria !== 'todas' && ej.categoria !== categoria) return false;
+        if (dificultad > 0 && ej.dificultad !== dificultad) return false;
+        if (tipo !== 'todos' && ej.tipo !== tipo) return false;
+        return true;
+    });
+    
+    indiceActual = 0;
+    actualizarInterfaz();
+}
+
+function mostrarPista() {
+    const ejercicio = ejerciciosFiltrados[indiceActual];
+    if (ejercicio.pistas && ejercicio.pistas.length > 0) {
+        const pistaAleatoria = ejercicio.pistas[Math.floor(Math.random() * ejercicio.pistas.length)];
+        document.getElementById('pista-area').innerHTML = `
+            <div class="pista-text">
+                <i class="bi bi-lightbulb text-warning"></i> ${pistaAleatoria}
+            </div>
+        `;
+        document.getElementById('pista-area').style.display = 'block';
+        
+        setTimeout(() => {
+            document.getElementById('pista-area').style.display = 'none';
+        }, 5000);
+    }
+}
+
+function marcarFacil() {
+    // Marcar ejercicio como fácil para futuras repeticiones
+    const ejercicio = ejerciciosFiltrados[indiceActual];
+    // Aquí se podría implementar un sistema de repetición espaciada
+    alert('Ejercicio marcado como fácil. Aparecerá con menos frecuencia en futuras repeticiones.');
+}
+
+function reportarError() {
+    const ejercicio = ejerciciosFiltrados[indiceActual];
+    // Aquí se podría enviar un reporte al administrador
+    alert('Error reportado. Gracias por ayudarnos a mejorar.');
+}
+
+function cambiarModo(modo) {
+    modoActual = modo;
+    
+    // Actualizar botones
+    document.getElementById('btn-modo-flashcards').classList.remove('active');
+    document.getElementById('btn-modo-practica').classList.remove('active');
+    document.getElementById('btn-modo-examen').classList.remove('active');
+    document.getElementById(`btn-modo-${modo}`).classList.add('active');
+    
+    if (modo === 'examen') {
+        iniciarExamen();
+    } else if (modo === 'practica') {
+        // Modo práctica: feedback inmediato sin límite de tiempo
+        document.getElementById('timer-container').style.display = 'none';
+    } else {
+        // Modo flashcards: modo estudio
+        document.getElementById('timer-container').style.display = 'none';
+    }
+}
+
+function iniciarExamen() {
+    document.getElementById('timer-container').style.display = 'block';
+    tiempoRestante = 900; // 15 minutos
+    examenEnProgreso = true;
+    
+    // Reiniciar respuestas para el examen
+    respuestasUsuario = {};
+    
+    // Seleccionar 20 ejercicios aleatorios
+    ejerciciosFiltrados = [...ejercicios]
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 20);
+    
+    indiceActual = 0;
+    actualizarInterfaz();
+    
+    // Iniciar temporizador
+    if (temporizador) clearInterval(temporizador);
+    temporizador = setInterval(() => {
+        tiempoRestante--;
+        const minutos = Math.floor(tiempoRestante / 60);
+        const segundos = tiempoRestante % 60;
+        document.getElementById('timer').textContent = 
+            `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+        
+        if (tiempoRestante <= 0) {
+            finalizarExamen();
+        }
+    }, 1000);
+}
+
+function finalizarExamen() {
+    clearInterval(temporizador);
+    examenEnProgreso = false;
+    
+    // Calcular puntuación
+    const aciertos = Object.values(respuestasUsuario).filter(r => r.correcta).length;
+    const total = ejerciciosFiltrados.length;
+    const porcentaje = (aciertos / total) * 100;
+    
+    alert(`Examen finalizado!\nAciertos: ${aciertos}/${total}\nPuntuación: ${porcentaje.toFixed(1)}%`);
+    
+    cambiarModo('flashcards');
+}
+
+function inicializarEstadisticas() {
+    const ctx = document.getElementById('statsChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Transitivas', 'Intransitivas', 'Reflexivas', 'Recíprocas', 'CD', 'CI', 'CC'],
+            datasets: [{
+                label: 'Aciertos',
+                data: [12, 19, 3, 5, 2, 3, 7],
+                backgroundColor: 'rgba(102, 126, 234, 0.2)',
+                borderColor: 'rgba(102, 126, 234, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+// Guardar progreso al cerrar la página
+window.addEventListener('beforeunload', () => {
+    localStorage.setItem('progresoFlashcards', JSON.stringify(progresoUsuario));
+});
+</script>
+{% endblock %}

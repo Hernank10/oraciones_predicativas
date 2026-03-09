@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Ejercicios - Oraciones Predicativas{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h1>Ejercicios Interactivos</h1>
+        <p class="lead">Pon a prueba tus conocimientos con estos ejercicios prácticos.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <!-- Filtros -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Filtros</h5>
+            </div>
+            <div class="card-body">
+                <form method="GET" action="{{ url_for('ejercicios') }}">
+                    <div class="mb-3">
+                        <label class="form-label">Categoría</label>
+                        <select name="categoria" class="form-select">
+                            <option value="">Todas</option>
+                            {% for cat in categorias %}
+                            <option value="{{ cat.id }}" {% if request.args.get('categoria')|int == cat.id %}selected{% endif %}>
+                                {{ cat.nombre }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Dificultad</label>
+                        <select name="dificultad" class="form-select">
+                            <option value="">Todas</option>
+                            <option value="1" {% if request.args.get('dificultad')|int == 1 %}selected{% endif %}>Fácil</option>
+                            <option value="3" {% if request.args.get('dificultad')|int == 3 %}selected{% endif %}>Media</option>
+                            <option value="5" {% if request.args.get('dificultad')|int == 5 %}selected{% endif %}>Difícil</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Aplicar filtros</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5 class="mb-0">Estadísticas</h5>
+            </div>
+            <div class="card-body">
+                {% if current_user.is_authenticated %}
+                <p>Ejercicios completados: <span class="badge bg-success">{{ current_user.progresos|sum(attribute='ejercicios_completados') }}</span></p>
+                <p>Puntuación total: <span class="badge bg-primary">{{ current_user.progresos|sum(attribute='puntuacion_total') }}</span></p>
+                {% else %}
+                <p><a href="{{ url_for('login') }}">Inicia sesión</a> para guardar tu progreso.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-9">
+        <div class="row">
+            {% for ejercicio in ejercicios %}
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="badge bg-primary">{{ ejercicio.categoria.nombre }}</span>
+                            <span class="badge bg-info">
+                                {% for i in range(ejercicio.dificultad) %}★{% endfor %}
+                                {% for i in range(5 - ejercicio.dificultad) %}☆{% endfor %}
+                            </span>
+                        </div>
+                        <h6 class="card-title">{{ ejercicio.pregunta[:100] }}{% if ejercicio.pregunta|length > 100 %}...{% endif %}</h6>
+                        <p class="card-text">
+                            <small class="text-muted">Tipo: {{ {
+                                'opcion_multiple': 'Opción múltiple',
+                                'completar': 'Completar',
+                                'identificar': 'Identificar'
+                            }[ejercicio.tipo] }}</small>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">Puntos: {{ ejercicio.puntos }}</small>
+                        </p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="{{ url_for('ejercicio_detalle', ejercicio_id=ejercicio.id) }}" class="btn btn-outline-primary btn-sm">
+                            Realizar ejercicio <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-12">
+                <div class="alert alert-info">
+                    No hay ejercicios disponibles con los filtros seleccionados.
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

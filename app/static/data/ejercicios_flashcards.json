@@ -1,0 +1,1904 @@
+{
+  "ejercicios": [
+    {
+      "id": 1,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 1 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 1",
+      "categoria": "Recíprocas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 1",
+        "Pista 2 para ejercicio 1"
+      ]
+    },
+    {
+      "id": 2,
+      "tipo": "identificar",
+      "pregunta": "Ejercicio 2 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 2",
+      "categoria": "Complemento Indirecto",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 2",
+        "Pista 2 para ejercicio 2"
+      ]
+    },
+    {
+      "id": 3,
+      "tipo": "analisis",
+      "pregunta": "Ejercicio 3 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 3",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 3",
+        "Pista 2 para ejercicio 3"
+      ]
+    },
+    {
+      "id": 4,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 4 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 4",
+      "categoria": "Transitivas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 4",
+        "Pista 2 para ejercicio 4"
+      ]
+    },
+    {
+      "id": 5,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 5 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 5",
+      "categoria": "Recíprocas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 5",
+        "Pista 2 para ejercicio 5"
+      ]
+    },
+    {
+      "id": 6,
+      "tipo": "gramatical",
+      "pregunta": "Ejercicio 6 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 6",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 6",
+        "Pista 2 para ejercicio 6"
+      ]
+    },
+    {
+      "id": 7,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 7 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 7",
+      "categoria": "Complemento Indirecto",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 7",
+        "Pista 2 para ejercicio 7"
+      ]
+    },
+    {
+      "id": 8,
+      "tipo": "transformar",
+      "pregunta": "Ejercicio 8 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 8",
+      "categoria": "Complemento Indirecto",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 8",
+        "Pista 2 para ejercicio 8"
+      ]
+    },
+    {
+      "id": 9,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 9 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 9",
+      "categoria": "Reflexivas",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 9",
+        "Pista 2 para ejercicio 9"
+      ]
+    },
+    {
+      "id": 10,
+      "tipo": "error",
+      "pregunta": "Ejercicio 10 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 10",
+      "categoria": "Reflexivas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 10",
+        "Pista 2 para ejercicio 10"
+      ]
+    },
+    {
+      "id": 11,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 11 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 11",
+      "categoria": "Uso de preposiciones",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 11",
+        "Pista 2 para ejercicio 11"
+      ]
+    },
+    {
+      "id": 12,
+      "tipo": "identificar",
+      "pregunta": "Ejercicio 12 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 12",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 12",
+        "Pista 2 para ejercicio 12"
+      ]
+    },
+    {
+      "id": 13,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 13 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 13",
+      "categoria": "Reflexivas",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 13",
+        "Pista 2 para ejercicio 13"
+      ]
+    },
+    {
+      "id": 14,
+      "tipo": "transformar",
+      "pregunta": "Ejercicio 14 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 14",
+      "categoria": "Intransitivas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 14",
+        "Pista 2 para ejercicio 14"
+      ]
+    },
+    {
+      "id": 15,
+      "tipo": "completar",
+      "pregunta": "Ejercicio 15 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 15",
+      "categoria": "Transitivas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 15",
+        "Pista 2 para ejercicio 15"
+      ]
+    },
+    {
+      "id": 16,
+      "tipo": "gramatical",
+      "pregunta": "Ejercicio 16 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 16",
+      "categoria": "Transitivas",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 16",
+        "Pista 2 para ejercicio 16"
+      ]
+    },
+    {
+      "id": 17,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 17 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 17",
+      "categoria": "Uso de preposiciones",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 17",
+        "Pista 2 para ejercicio 17"
+      ]
+    },
+    {
+      "id": 18,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 18 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 18",
+      "categoria": "Uso de preposiciones",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 18",
+        "Pista 2 para ejercicio 18"
+      ]
+    },
+    {
+      "id": 19,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 19 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 19",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 19",
+        "Pista 2 para ejercicio 19"
+      ]
+    },
+    {
+      "id": 20,
+      "tipo": "identificar",
+      "pregunta": "Ejercicio 20 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 20",
+      "categoria": "Complemento Directo",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 20",
+        "Pista 2 para ejercicio 20"
+      ]
+    },
+    {
+      "id": 21,
+      "tipo": "analisis",
+      "pregunta": "Ejercicio 21 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 21",
+      "categoria": "Transitivas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 21",
+        "Pista 2 para ejercicio 21"
+      ]
+    },
+    {
+      "id": 22,
+      "tipo": "gramatical",
+      "pregunta": "Ejercicio 22 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 22",
+      "categoria": "Transitivas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 22",
+        "Pista 2 para ejercicio 22"
+      ]
+    },
+    {
+      "id": 23,
+      "tipo": "identificar",
+      "pregunta": "Ejercicio 23 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 23",
+      "categoria": "Complemento Directo",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 23",
+        "Pista 2 para ejercicio 23"
+      ]
+    },
+    {
+      "id": 24,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 24 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 24",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 24",
+        "Pista 2 para ejercicio 24"
+      ]
+    },
+    {
+      "id": 25,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 25 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 25",
+      "categoria": "Intransitivas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 25",
+        "Pista 2 para ejercicio 25"
+      ]
+    },
+    {
+      "id": 26,
+      "tipo": "completar",
+      "pregunta": "Ejercicio 26 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 26",
+      "categoria": "Intransitivas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 26",
+        "Pista 2 para ejercicio 26"
+      ]
+    },
+    {
+      "id": 27,
+      "tipo": "identificar",
+      "pregunta": "Ejercicio 27 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 27",
+      "categoria": "Transitivas",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 27",
+        "Pista 2 para ejercicio 27"
+      ]
+    },
+    {
+      "id": 28,
+      "tipo": "completar",
+      "pregunta": "Ejercicio 28 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 28",
+      "categoria": "Uso de preposiciones",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 28",
+        "Pista 2 para ejercicio 28"
+      ]
+    },
+    {
+      "id": 29,
+      "tipo": "gramatical",
+      "pregunta": "Ejercicio 29 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 29",
+      "categoria": "Recíprocas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 29",
+        "Pista 2 para ejercicio 29"
+      ]
+    },
+    {
+      "id": 30,
+      "tipo": "gramatical",
+      "pregunta": "Ejercicio 30 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 30",
+      "categoria": "Recíprocas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 30",
+        "Pista 2 para ejercicio 30"
+      ]
+    },
+    {
+      "id": 31,
+      "tipo": "identificar",
+      "pregunta": "Ejercicio 31 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 31",
+      "categoria": "Transitivas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 31",
+        "Pista 2 para ejercicio 31"
+      ]
+    },
+    {
+      "id": 32,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 32 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 32",
+      "categoria": "Complemento Indirecto",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 32",
+        "Pista 2 para ejercicio 32"
+      ]
+    },
+    {
+      "id": 33,
+      "tipo": "completar",
+      "pregunta": "Ejercicio 33 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 33",
+      "categoria": "Transitivas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 33",
+        "Pista 2 para ejercicio 33"
+      ]
+    },
+    {
+      "id": 34,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 34 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 34",
+      "categoria": "Complemento Indirecto",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 34",
+        "Pista 2 para ejercicio 34"
+      ]
+    },
+    {
+      "id": 35,
+      "tipo": "completar",
+      "pregunta": "Ejercicio 35 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 35",
+      "categoria": "Reflexivas",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 35",
+        "Pista 2 para ejercicio 35"
+      ]
+    },
+    {
+      "id": 36,
+      "tipo": "analisis",
+      "pregunta": "Ejercicio 36 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 36",
+      "categoria": "Intransitivas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 36",
+        "Pista 2 para ejercicio 36"
+      ]
+    },
+    {
+      "id": 37,
+      "tipo": "error",
+      "pregunta": "Ejercicio 37 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 37",
+      "categoria": "Reflexivas",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 37",
+        "Pista 2 para ejercicio 37"
+      ]
+    },
+    {
+      "id": 38,
+      "tipo": "transformar",
+      "pregunta": "Ejercicio 38 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 38",
+      "categoria": "Intransitivas",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 38",
+        "Pista 2 para ejercicio 38"
+      ]
+    },
+    {
+      "id": 39,
+      "tipo": "analisis",
+      "pregunta": "Ejercicio 39 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 39",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 39",
+        "Pista 2 para ejercicio 39"
+      ]
+    },
+    {
+      "id": 40,
+      "tipo": "completar",
+      "pregunta": "Ejercicio 40 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 40",
+      "categoria": "Uso de preposiciones",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 40",
+        "Pista 2 para ejercicio 40"
+      ]
+    },
+    {
+      "id": 41,
+      "tipo": "analisis",
+      "pregunta": "Ejercicio 41 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 41",
+      "categoria": "Recíprocas",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 41",
+        "Pista 2 para ejercicio 41"
+      ]
+    },
+    {
+      "id": 42,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 42 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 42",
+      "categoria": "Complemento Directo",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 42",
+        "Pista 2 para ejercicio 42"
+      ]
+    },
+    {
+      "id": 43,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 43 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 43",
+      "categoria": "Reflexivas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 43",
+        "Pista 2 para ejercicio 43"
+      ]
+    },
+    {
+      "id": 44,
+      "tipo": "error",
+      "pregunta": "Ejercicio 44 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 44",
+      "categoria": "Intransitivas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 44",
+        "Pista 2 para ejercicio 44"
+      ]
+    },
+    {
+      "id": 45,
+      "tipo": "gramatical",
+      "pregunta": "Ejercicio 45 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 45",
+      "categoria": "Reflexivas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 45",
+        "Pista 2 para ejercicio 45"
+      ]
+    },
+    {
+      "id": 46,
+      "tipo": "transformar",
+      "pregunta": "Ejercicio 46 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 46",
+      "categoria": "Transitivas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 46",
+        "Pista 2 para ejercicio 46"
+      ]
+    },
+    {
+      "id": 47,
+      "tipo": "identificar",
+      "pregunta": "Ejercicio 47 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 47",
+      "categoria": "Uso de preposiciones",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 47",
+        "Pista 2 para ejercicio 47"
+      ]
+    },
+    {
+      "id": 48,
+      "tipo": "error",
+      "pregunta": "Ejercicio 48 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 48",
+      "categoria": "Complemento Indirecto",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 48",
+        "Pista 2 para ejercicio 48"
+      ]
+    },
+    {
+      "id": 49,
+      "tipo": "transformar",
+      "pregunta": "Ejercicio 49 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 49",
+      "categoria": "Reflexivas",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 49",
+        "Pista 2 para ejercicio 49"
+      ]
+    },
+    {
+      "id": 50,
+      "tipo": "error",
+      "pregunta": "Ejercicio 50 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 50",
+      "categoria": "Reflexivas",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 50",
+        "Pista 2 para ejercicio 50"
+      ]
+    },
+    {
+      "id": 51,
+      "tipo": "completar",
+      "pregunta": "Ejercicio 51 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 51",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 51",
+        "Pista 2 para ejercicio 51"
+      ]
+    },
+    {
+      "id": 52,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 52 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 52",
+      "categoria": "Recíprocas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 52",
+        "Pista 2 para ejercicio 52"
+      ]
+    },
+    {
+      "id": 53,
+      "tipo": "gramatical",
+      "pregunta": "Ejercicio 53 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 53",
+      "categoria": "Recíprocas",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 53",
+        "Pista 2 para ejercicio 53"
+      ]
+    },
+    {
+      "id": 54,
+      "tipo": "analisis",
+      "pregunta": "Ejercicio 54 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 54",
+      "categoria": "Complemento Indirecto",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 54",
+        "Pista 2 para ejercicio 54"
+      ]
+    },
+    {
+      "id": 55,
+      "tipo": "error",
+      "pregunta": "Ejercicio 55 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 55",
+      "categoria": "Intransitivas",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 55",
+        "Pista 2 para ejercicio 55"
+      ]
+    },
+    {
+      "id": 56,
+      "tipo": "gramatical",
+      "pregunta": "Ejercicio 56 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 56",
+      "categoria": "Transitivas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 56",
+        "Pista 2 para ejercicio 56"
+      ]
+    },
+    {
+      "id": 57,
+      "tipo": "gramatical",
+      "pregunta": "Ejercicio 57 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 57",
+      "categoria": "Complemento Directo",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 57",
+        "Pista 2 para ejercicio 57"
+      ]
+    },
+    {
+      "id": 58,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 58 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 58",
+      "categoria": "Complemento Directo",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 58",
+        "Pista 2 para ejercicio 58"
+      ]
+    },
+    {
+      "id": 59,
+      "tipo": "completar",
+      "pregunta": "Ejercicio 59 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 59",
+      "categoria": "Intransitivas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 59",
+        "Pista 2 para ejercicio 59"
+      ]
+    },
+    {
+      "id": 60,
+      "tipo": "error",
+      "pregunta": "Ejercicio 60 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 60",
+      "categoria": "Complemento Directo",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 60",
+        "Pista 2 para ejercicio 60"
+      ]
+    },
+    {
+      "id": 61,
+      "tipo": "gramatical",
+      "pregunta": "Ejercicio 61 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 61",
+      "categoria": "Recíprocas",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 61",
+        "Pista 2 para ejercicio 61"
+      ]
+    },
+    {
+      "id": 62,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 62 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 62",
+      "categoria": "Transitivas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 62",
+        "Pista 2 para ejercicio 62"
+      ]
+    },
+    {
+      "id": 63,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 63 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 63",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 63",
+        "Pista 2 para ejercicio 63"
+      ]
+    },
+    {
+      "id": 64,
+      "tipo": "analisis",
+      "pregunta": "Ejercicio 64 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 64",
+      "categoria": "Complemento Directo",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 64",
+        "Pista 2 para ejercicio 64"
+      ]
+    },
+    {
+      "id": 65,
+      "tipo": "error",
+      "pregunta": "Ejercicio 65 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 65",
+      "categoria": "Intransitivas",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 65",
+        "Pista 2 para ejercicio 65"
+      ]
+    },
+    {
+      "id": 66,
+      "tipo": "analisis",
+      "pregunta": "Ejercicio 66 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 66",
+      "categoria": "Recíprocas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 66",
+        "Pista 2 para ejercicio 66"
+      ]
+    },
+    {
+      "id": 67,
+      "tipo": "identificar",
+      "pregunta": "Ejercicio 67 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 67",
+      "categoria": "Transitivas",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 67",
+        "Pista 2 para ejercicio 67"
+      ]
+    },
+    {
+      "id": 68,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 68 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 68",
+      "categoria": "Complemento Indirecto",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 68",
+        "Pista 2 para ejercicio 68"
+      ]
+    },
+    {
+      "id": 69,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 69 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 69",
+      "categoria": "Complemento Directo",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 69",
+        "Pista 2 para ejercicio 69"
+      ]
+    },
+    {
+      "id": 70,
+      "tipo": "error",
+      "pregunta": "Ejercicio 70 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 70",
+      "categoria": "Transitivas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 70",
+        "Pista 2 para ejercicio 70"
+      ]
+    },
+    {
+      "id": 71,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 71 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 71",
+      "categoria": "Transitivas",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 71",
+        "Pista 2 para ejercicio 71"
+      ]
+    },
+    {
+      "id": 72,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 72 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 72",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 72",
+        "Pista 2 para ejercicio 72"
+      ]
+    },
+    {
+      "id": 73,
+      "tipo": "analisis",
+      "pregunta": "Ejercicio 73 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 73",
+      "categoria": "Complemento Indirecto",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 73",
+        "Pista 2 para ejercicio 73"
+      ]
+    },
+    {
+      "id": 74,
+      "tipo": "error",
+      "pregunta": "Ejercicio 74 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 74",
+      "categoria": "Complemento Directo",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 74",
+        "Pista 2 para ejercicio 74"
+      ]
+    },
+    {
+      "id": 75,
+      "tipo": "completar",
+      "pregunta": "Ejercicio 75 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 75",
+      "categoria": "Complemento Indirecto",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 75",
+        "Pista 2 para ejercicio 75"
+      ]
+    },
+    {
+      "id": 76,
+      "tipo": "identificar",
+      "pregunta": "Ejercicio 76 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 76",
+      "categoria": "Reflexivas",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 76",
+        "Pista 2 para ejercicio 76"
+      ]
+    },
+    {
+      "id": 77,
+      "tipo": "transformar",
+      "pregunta": "Ejercicio 77 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 77",
+      "categoria": "Uso de preposiciones",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 77",
+        "Pista 2 para ejercicio 77"
+      ]
+    },
+    {
+      "id": 78,
+      "tipo": "transformar",
+      "pregunta": "Ejercicio 78 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 78",
+      "categoria": "Reflexivas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 78",
+        "Pista 2 para ejercicio 78"
+      ]
+    },
+    {
+      "id": 79,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 79 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 79",
+      "categoria": "Intransitivas",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 79",
+        "Pista 2 para ejercicio 79"
+      ]
+    },
+    {
+      "id": 80,
+      "tipo": "identificar",
+      "pregunta": "Ejercicio 80 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 80",
+      "categoria": "Complemento Directo",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 80",
+        "Pista 2 para ejercicio 80"
+      ]
+    },
+    {
+      "id": 81,
+      "tipo": "analisis",
+      "pregunta": "Ejercicio 81 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 81",
+      "categoria": "Complemento Directo",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 81",
+        "Pista 2 para ejercicio 81"
+      ]
+    },
+    {
+      "id": 82,
+      "tipo": "gramatical",
+      "pregunta": "Ejercicio 82 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 82",
+      "categoria": "Recíprocas",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 82",
+        "Pista 2 para ejercicio 82"
+      ]
+    },
+    {
+      "id": 83,
+      "tipo": "analisis",
+      "pregunta": "Ejercicio 83 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 83",
+      "categoria": "Complemento Indirecto",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 83",
+        "Pista 2 para ejercicio 83"
+      ]
+    },
+    {
+      "id": 84,
+      "tipo": "gramatical",
+      "pregunta": "Ejercicio 84 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 84",
+      "categoria": "Uso de preposiciones",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 84",
+        "Pista 2 para ejercicio 84"
+      ]
+    },
+    {
+      "id": 85,
+      "tipo": "error",
+      "pregunta": "Ejercicio 85 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 85",
+      "categoria": "Transitivas",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 85",
+        "Pista 2 para ejercicio 85"
+      ]
+    },
+    {
+      "id": 86,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 86 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 86",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 86",
+        "Pista 2 para ejercicio 86"
+      ]
+    },
+    {
+      "id": 87,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 87 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 87",
+      "categoria": "Reflexivas",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 87",
+        "Pista 2 para ejercicio 87"
+      ]
+    },
+    {
+      "id": 88,
+      "tipo": "identificar",
+      "pregunta": "Ejercicio 88 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 88",
+      "categoria": "Recíprocas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 88",
+        "Pista 2 para ejercicio 88"
+      ]
+    },
+    {
+      "id": 89,
+      "tipo": "transformar",
+      "pregunta": "Ejercicio 89 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 89",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 89",
+        "Pista 2 para ejercicio 89"
+      ]
+    },
+    {
+      "id": 90,
+      "tipo": "error",
+      "pregunta": "Ejercicio 90 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 90",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 90",
+        "Pista 2 para ejercicio 90"
+      ]
+    },
+    {
+      "id": 91,
+      "tipo": "analisis",
+      "pregunta": "Ejercicio 91 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 91",
+      "categoria": "Transitivas",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 91",
+        "Pista 2 para ejercicio 91"
+      ]
+    },
+    {
+      "id": 92,
+      "tipo": "completar",
+      "pregunta": "Ejercicio 92 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 1,
+      "explicacion": "Explicación detallada para el ejercicio 92",
+      "categoria": "Complemento Indirecto",
+      "dificultad": 4,
+      "pistas": [
+        "Pista 1 para ejercicio 92",
+        "Pista 2 para ejercicio 92"
+      ]
+    },
+    {
+      "id": 93,
+      "tipo": "error",
+      "pregunta": "Ejercicio 93 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 93",
+      "categoria": "Uso de preposiciones",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 93",
+        "Pista 2 para ejercicio 93"
+      ]
+    },
+    {
+      "id": 94,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 94 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 94",
+      "categoria": "Complemento Directo",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 94",
+        "Pista 2 para ejercicio 94"
+      ]
+    },
+    {
+      "id": 95,
+      "tipo": "transformar",
+      "pregunta": "Ejercicio 95 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 95",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 95",
+        "Pista 2 para ejercicio 95"
+      ]
+    },
+    {
+      "id": 96,
+      "tipo": "identificar",
+      "pregunta": "Ejercicio 96 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 2,
+      "explicacion": "Explicación detallada para el ejercicio 96",
+      "categoria": "Recíprocas",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 96",
+        "Pista 2 para ejercicio 96"
+      ]
+    },
+    {
+      "id": 97,
+      "tipo": "completar",
+      "pregunta": "Ejercicio 97 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 97",
+      "categoria": "Complementos Circunstanciales",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 97",
+        "Pista 2 para ejercicio 97"
+      ]
+    },
+    {
+      "id": 98,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 98 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 0,
+      "explicacion": "Explicación detallada para el ejercicio 98",
+      "categoria": "Transitivas",
+      "dificultad": 1,
+      "pistas": [
+        "Pista 1 para ejercicio 98",
+        "Pista 2 para ejercicio 98"
+      ]
+    },
+    {
+      "id": 99,
+      "tipo": "teoria",
+      "pregunta": "Ejercicio 99 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 99",
+      "categoria": "Complemento Directo",
+      "dificultad": 2,
+      "pistas": [
+        "Pista 1 para ejercicio 99",
+        "Pista 2 para ejercicio 99"
+      ]
+    },
+    {
+      "id": 100,
+      "tipo": "clasificar",
+      "pregunta": "Ejercicio 100 de práctica",
+      "opciones": [
+        "Opción A",
+        "Opción B",
+        "Opción C",
+        "Opción D"
+      ],
+      "respuesta_correcta": 3,
+      "explicacion": "Explicación detallada para el ejercicio 100",
+      "categoria": "Reflexivas",
+      "dificultad": 3,
+      "pistas": [
+        "Pista 1 para ejercicio 100",
+        "Pista 2 para ejercicio 100"
+      ]
+    }
+  ]
+}
